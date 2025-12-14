@@ -1,0 +1,13 @@
+# build the image
+docker build -t cnn-gpu-image .
+
+# Create a container 
+docker run --gpus all -it --rm ^
+  -v "D:\\0.LatestDSCourse\\DS_course\\TransferLearning\\dataset\\PetImages:/tf/code/dataset/PetImages" ^
+  -v "D:\\0.LatestDSCourse\\DS_course\\1.NDemo\\Projects\\CNN\\cnn_cat_dog_project\\models:/tf/code/models" ^
+  cnn-gpu-image
+
+# run the app
+  streamlit run app.py
+
+
